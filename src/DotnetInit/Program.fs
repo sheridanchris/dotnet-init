@@ -61,6 +61,7 @@ let createProject command =
 
   let sourceDirectory = $"./src/{projectName}"
   let testsDirectory = $"./tests/{projectName}.Tests"
+  let toolManifestExists = File.Exists(Path.Combine(".config", "dotnet-tools.json"))
 
   let command =
     [
@@ -69,7 +70,8 @@ let createProject command =
       $"dotnet sln add {sourceDirectory}"
 
       if command.IncludeFormatter then
-        "dotnet new tool-manifest"
+        if not toolManifestExists then
+          "dotnet new tool-manifest"
 
         match command.Language with
         | CSharp -> "dotnet tool install csharpier"
