@@ -6,7 +6,7 @@
     <PackageId>dotnet-init-tool</PackageId>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>init</ToolCommandName>
-    <Version>0.0.1</Version>
+    <Version>0.0.2</Version>
     <Authors>Christian Sheridan</Authors>
     <RepositoryUrl>https://github.com/sheridanchris/dotnet-init</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
