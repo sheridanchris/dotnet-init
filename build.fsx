@@ -20,12 +20,12 @@ let stage_lint =
   stage "Lint" {
     stage "Format" {
       whenNot { envVar options.GithubAction }
-      run "dotnet fantomas . -r"
+      run "dotnet fantomas ."
     }
 
     stage "Check" {
       whenEnvVar options.GithubAction
-      run "dotnet fantomas . -r --check"
+      run "dotnet fantomas --check ."
     }
   }
 
