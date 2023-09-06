@@ -1,4 +1,4 @@
-#r "nuget: Fun.Build, 0.5.0"
+#r "nuget: Fun.Build, 0.5.1"
 
 // Copied from https://github.com/slaveOftime/Fun.Build/blob/master/build.fsx
 open System
