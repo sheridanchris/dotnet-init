@@ -3,6 +3,12 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>init</ToolCommandName>
+    <Version>0.0.1</Version>
+    <Authors>Christian Sheridan</Authors>
+    <RepositoryUrl>https://github.com/sheridanchris/dotnet-init</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
