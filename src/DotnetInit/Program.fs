@@ -2,6 +2,7 @@
 open System
 open System.IO
 open FSharp.SystemCommandLine
+open System.Runtime.InteropServices
 
 type Language =
   | CSharp
@@ -15,6 +16,15 @@ type Command = {
   IncludeTests: bool
   IncludeFormatter: bool
 }
+
+let shell =
+  if
+    RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
+    || RuntimeInformation.IsOSPlatform(OSPlatform.OSX)
+  then
+    BASH
+  else
+    CMD
 
 let strToLanguage language =
   let comparison = StringComparison.CurrentCultureIgnoreCase
@@ -92,7 +102,7 @@ let createProject command =
     |> String.concat " && "
 
   cli {
-    Shell BASH
+    Shell shell
     WorkingDirectory(outputDirectory.FullName)
     Command command
   }
