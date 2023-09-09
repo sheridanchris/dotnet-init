@@ -10,6 +10,7 @@ dotnet tool install --global dotnet-init-tool
 ```
 
 ### Usage
+Note: the only required argument is `-lang`
 ```
 Description:
   Initializes a new .NET solution
