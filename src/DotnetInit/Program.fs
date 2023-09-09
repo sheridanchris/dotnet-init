@@ -61,7 +61,9 @@ let createProject command =
 
   let sourceDirectory = $"./src/{projectName}"
   let testsDirectory = $"./tests/{projectName}.Tests"
-  let toolManifestExists = File.Exists(Path.Combine(".config", "dotnet-tools.json"))
+
+  let toolManifestExists =
+    File.Exists(Path.Combine(outputDirectory.FullName, ".config", "dotnet-tools.json"))
 
   let command =
     [
@@ -103,12 +105,12 @@ let main args =
     description "Initializes a new .NET solution"
 
     inputs (
-      Input.Option<string>("--language", "The language of the project you'd like to create (c#, f#)."),
+      Input.Option<string>([ "-lang"; "--language" ], "The language of the project you'd like to create (c#, f#)."),
       Input.OptionMaybe<DirectoryInfo>(
-        [ "--output"; "-o" ],
-        "The output directory of the project you'd like to create."
+        [ "-o"; "--output" ],
+        "The root directory of the solution and project(s) you'd like to create."
       ),
-      Input.OptionMaybe<string>("--name", "The name of the project you'd like to create."),
+      Input.OptionMaybe<string>("--name", "The name of the solution and project you'd like to create."),
       Input.OptionMaybe<string>("--template", "The dotnet template of the project you'd like to create."),
       Input.Option<bool>("--includeTests", "Include a test project."),
       Input.Option<bool>("--includeFormatter", "Include a formatting tool (fantomas or csharpier).")

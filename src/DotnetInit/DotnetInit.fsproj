@@ -1,12 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <AssemblyName>init</AssemblyName>
     <OutputType>Exe</OutputType>
     <TargetFramework>net7.0</TargetFramework>
     <PackageId>dotnet-init-tool</PackageId>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>init</ToolCommandName>
-    <Version>0.0.2</Version>
+    <Version>0.0.3</Version>
     <Authors>Christian Sheridan</Authors>
     <RepositoryUrl>https://github.com/sheridanchris/dotnet-init</RepositoryUrl>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
